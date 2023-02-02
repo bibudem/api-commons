@@ -1,0 +1,73 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "/about",
+    "version": "1.0.0",
+    "description": "Route `/about` utilisée par tous les services REST des Bibliothèques de l'Université de Montréal",
+    "contact": {
+      "name": "Christian Rémillard",
+      "url": "https://github.com/bibudem/api-communs",
+      "email": "christian.remillard@umontreal.ca"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://raw.githubusercontent.com/bibudem/api-communs/main/LICENSE"
+    },
+    "x-logo": {
+      "url": ""
+    }
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Serveur de développement"
+    }
+  ],
+  "paths": {
+    "/about": {
+      "get": {
+        "tags": [
+          "À propos"
+        ],
+        "responses": {
+          "200": {
+            "content": {},
+            "description": "Ok",
+            "headers": {},
+            "links": {}
+          }
+        },
+        "operationId": "getAbout",
+        "summary": "Retourne des informations à propos de l'API",
+        "description": "Affiche le nom, la version et l'environnement d'exécution de l'API"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "aboutHTML": {
+        "type": "string",
+        "x-last-modified": 1675360554306
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "OK",
+        "x-last-modified": 1675360603377,
+        "$ref": "#/components/responses/200"
+      }
+    },
+    "parameters": {},
+    "securitySchemes": {},
+    "headers": {}
+  },
+  "tags": [
+    {
+      "name": "À propos"
+    }
+  ],
+  "x-stoplight": {
+    "id": "snkgxctdxuqc9"
+  },
+  "security": []
+}
