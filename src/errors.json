@@ -4,19 +4,18 @@
     "id": "ms00kxv5cxwml"
   },
   "info": {
-    "title": "errors",
-    "version": "1.0",
+    "title": "API errors",
+    "version": "1.0.0",
     "contact": {
       "name": "Christian Rémillard",
       "email": "christian.remillard@umontreal.ca",
-      "url": "https://github.com/bibudem/api-acquisitions"
+      "url": "https://github.com/bibudem/api-communs"
     },
     "license": {
-      "url": "https://raw.githubusercontent.com/bibudem/api-acquisitions/main/LICENSE",
+      "url": "https://raw.githubusercontent.com/bibudem/api-communs/main/LICENSE",
       "name": "MIT"
     }
   },
-  "servers": [],
   "paths": {},
   "components": {
     "schemas": {
@@ -25,10 +24,16 @@
         "x-stoplight": {
           "id": "u0h2on1qqh19r"
         },
-        "type": [
-          "object",
-          "array",
-          "string"
+        "allOf": [
+          {
+            "type": "object"
+          },
+          {
+            "type": "array"
+          },
+          {
+            "type": "string"
+          }
         ]
       },
       "HttpStatusCode": {
