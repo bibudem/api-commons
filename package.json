@@ -1,0 +1,29 @@
+{
+  "name": "@bibudem/api-communs",
+  "version": "1.0.0",
+  "description": "Librairies communes utilisées par les services REST des Bibliothèques de l'Université de Montréal",
+  "type": "module",
+  "exports": "./index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bibudem/api-communs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bibudem/api-communs/issues"
+  },
+  "homepage": "https://github.com/bibudem/api-communs",
+  "engines": {
+    "node": "16.17.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-openapi": "^12.1.0",
+    "swagger-ui-express": "^4.6.0",
+    "tracer": "^1.1.6"
+  },
+  "devDependencies": {}
+}

@@ -6,6 +6,7 @@
   "info": {
     "title": "API errors",
     "version": "1.0.0",
+    "description": "Librairie de composants utilisés par les API REST des Bibliothèques de l'Université de Montréal",
     "contact": {
       "name": "Christian Rémillard",
       "email": "christian.remillard@umontreal.ca",

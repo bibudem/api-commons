@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "/about",
+    "title": "Schéma de la route /about",
     "version": "1.0.0",
     "description": "Route `/about` utilisée par tous les services REST des Bibliothèques de l'Université de Montréal",
     "contact": {
@@ -17,12 +17,6 @@
       "url": ""
     }
   },
-  "servers": [
-    {
-      "url": "/",
-      "description": "Serveur de développement"
-    }
-  ],
   "paths": {
     "/about": {
       "get": {
