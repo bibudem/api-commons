@@ -21,12 +21,18 @@ export function errorMiddleware(error, req, res, next) {
 
     // Request validation error
     if (Reflect.has(error, 'status') && Reflect.has(error, 'errors')) {
-      const message = error.errors.map(error => `The ${error.path} ${error.location} parameter ${error.message}.`).join(' ')
-      return res.status(error.status).json({
-        status: error.status,
-        message,
-        data: error.errors
-      })
+      try {
+        const message = error.errors.map(error => `The ${error.path} ${error.location} parameter ${error.message}.`).join(' ')
+        return res.status(error.status).json({
+          status: error.status,
+          message,
+          details: error.errors
+        })
+
+      } catch (error) {
+        console.error(error)
+        return next(error)
+      }
     }
 
     // Default case for object errors
@@ -42,13 +48,32 @@ export function errorMiddleware(error, req, res, next) {
 }
 
 export function defaultMiddleware(apiBaseUrl) {
-  return function defaultJSONHandler(req, res, next) {
-    // Final response handler
+  return [
+    function defaultJSONErrorHandler(error, req, res, next) {
+      console.error(error)
+      if (prodEnv) {
+        return res.status(500).json({ status: 'error', message: 'Something bad happened' })
+      }
 
-    const url = new URL(req.originalUrl, `${apiBaseUrl}/`)
-    res.status(404).json({
-      status: 404,
-      message: `Cannot ${req.method} ${url.pathname}`
-    })
-  }
+      if (Reflect.has(error, 'responseValidationError')) {
+
+        const status = error.status
+        const message = error.responseValidationError.message
+
+        return res.status(error.status).json({ status, message, details: error.responseValidationError });
+      }
+
+      const status = error?.status ?? 500
+      return res.status(status).json({ status, details: error })
+    },
+    function defaultJSONHandler(req, res, next) {
+      // Final response handler
+
+      const url = new URL(req.originalUrl, `${apiBaseUrl}/`)
+      res.status(404).json({
+        status: 404,
+        message: `Cannot ${req.method} ${url.pathname}`
+      })
+    }
+  ]
 }
