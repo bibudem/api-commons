@@ -2,6 +2,13 @@
 
 Toutes les modifications notables apportées à ce projet seront documentées dans ce fichier. Consultez [standard-version](https://github.com/conventional-changelog/standard-version) pour les lignes directrices des commits.
 
+## [1.2.0](https://github.com/bibudem/api-communs/compare/v1.1.0...v1.2.0) (2023-02-13)
+
+
+### Features
+
+* Possibilité de modifier les paramètres des validateurs par défaut ([e5d7c99](https://github.com/bibudem/api-communs/commit/e5d7c99d5c79edae568e488a213f7b03ca2c09d6))
+
 ## 1.1.0 (2023-02-13)
 
 
