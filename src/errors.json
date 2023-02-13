@@ -25,7 +25,7 @@
         "x-stoplight": {
           "id": "u0h2on1qqh19r"
         },
-        "allOf": [
+        "oneOf": [
           {
             "type": "object"
           },
