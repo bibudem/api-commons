@@ -149,8 +149,7 @@
         },
         "required": [
           "status",
-          "message",
-          "details"
+          "message"
         ]
       },
       "Status": {
