@@ -1,5 +1,7 @@
 # Changelog
 
+Toutes les modifications notables apportées à ce projet seront documentées dans ce fichier. Consultez [standard-version](https://github.com/conventional-changelog/standard-version) pour les lignes directrices des commits.
+
 ## 1.1.0 (2023-02-13)
 
 
@@ -20,7 +22,3 @@
 ### Miscellaneous Chores
 
 * release 1.1.0 ([ac21c3e](https://github.com/bibudem/api-communs/commit/ac21c3e796910d5c1b1125d94f145b4cb12ea302))
-
-## Changelog
-
-Toutes les modifications notables apportées à ce projet seront documentées dans ce fichier. Consultez [standard-version](https://github.com/conventional-changelog/standard-version) pour les lignes directrices des commits.
