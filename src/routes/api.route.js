@@ -7,7 +7,7 @@ import { responseValidationMiddleware } from '../middlewares/response-validation
 import { defaultMiddleware, errorMiddleware } from '../middlewares/error.middleware.js'
 import errorsSchema from '../errors.json' assert {type: 'json'}
 
-export async function initializeApi({ app, apiSchema, apiBaseUrl, operations, pkg }) {
+export async function initializeApi({ apiSchema, apiBaseUrl, operations, pkg }) {
 
   const router = new Router()
 
@@ -15,11 +15,11 @@ export async function initializeApi({ app, apiSchema, apiBaseUrl, operations, pk
 
   await initialize({
     apiDoc: {
-      ...apiSchema,
       'x-express-openapi-additional-middleware': [
         responseValidationMiddleware
       ],
-      'x-express-openapi-validation-strict': true
+      'x-express-openapi-validation-strict': true,
+      ...apiSchema,
     },
     app: router,
     enableObjectCoercion: true,
