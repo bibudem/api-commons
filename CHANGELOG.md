@@ -2,6 +2,14 @@
 
 Toutes les modifications notables apportées à ce projet seront documentées dans ce fichier. Consultez [standard-version](https://github.com/conventional-changelog/standard-version) pour les lignes directrices des commits.
 
+## [1.3.0](https://github.com/bibudem/api-communs/compare/v1.2.0...v1.3.0) (2023-02-21)
+
+
+### Features
+
+* Ajout de middlewares ([77b330a](https://github.com/bibudem/api-communs/commit/77b330a04fc614d8295432ce0c16121a13a6b497))
+* Ajout de référencement de schemas externes ([895bc30](https://github.com/bibudem/api-communs/commit/895bc30a21b6485b15425254b3dee7f7522d8695))
+
 ## [1.2.0](https://github.com/bibudem/api-communs/compare/v1.1.0...v1.2.0) (2023-02-13)
 
 
