@@ -7,7 +7,7 @@ import { responseValidationMiddleware } from '../middlewares/response-validation
 import { defaultMiddleware, errorMiddleware } from '../middlewares/error.middleware.js'
 import errorsSchema from '../errors.json' assert {type: 'json'}
 
-export async function initializeApi({ apiSchema, apiBaseUrl, operations, pkg }) {
+export async function initializeApi({ apiSchema, apiBaseUrl, operations, pkg, middlewares = [] }) {
 
   const router = new Router()
 
@@ -16,6 +16,7 @@ export async function initializeApi({ apiSchema, apiBaseUrl, operations, pkg }) 
   await initialize({
     apiDoc: {
       'x-express-openapi-additional-middleware': [
+        ...middlewares,
         responseValidationMiddleware
       ],
       'x-express-openapi-validation-strict': true,
