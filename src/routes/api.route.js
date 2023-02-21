@@ -7,7 +7,7 @@ import { responseValidationMiddleware } from '../middlewares/response-validation
 import { defaultMiddleware, errorMiddleware } from '../middlewares/error.middleware.js'
 import errorsSchema from '../errors.json' assert {type: 'json'}
 
-export async function initializeApi({ apiSchema, apiBaseUrl, operations, pkg, middlewares = [] }) {
+export async function initializeApi({ apiSchema, apiBaseUrl, operations, pkg, middlewares = [], externalSchemas = {} }) {
 
   const router = new Router()
 
@@ -27,7 +27,8 @@ export async function initializeApi({ apiSchema, apiBaseUrl, operations, pkg, mi
     promiseMode: true,
     errorMiddleware,
     externalSchemas: {
-      'https://raw.githubusercontent.com/bibudem/api-communs/main/src/errors.json': errorsSchema
+      'https://raw.githubusercontent.com/bibudem/api-communs/main/src/errors.json': errorsSchema,
+      ...externalSchemas
     },
     operations: {
       getAbout: getAboutController(pkg),
