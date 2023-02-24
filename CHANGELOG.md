@@ -2,6 +2,18 @@
 
 Toutes les modifications notables apportées à ce projet seront documentées dans ce fichier. Consultez [standard-version](https://github.com/conventional-changelog/standard-version) pour les lignes directrices des commits.
 
+## [1.4.0](https://github.com/bibudem/api-communs/compare/v1.3.0...v1.4.0) (2023-02-24)
+
+
+### Features
+
+* **schema:** Ajout d'une route /schemas/error pour le schéma errors.json ([84acfba](https://github.com/bibudem/api-communs/commit/84acfbadf08ae7ac69bd2a014feaa040d84aafa5))
+
+
+### Bug Fixes
+
+* **schema:** Le schéma errors.json ne validait pas ([0bf52bb](https://github.com/bibudem/api-communs/commit/0bf52bba4fc393a2d90e8db71e89e6797f90b22d))
+
 ## [1.3.0](https://github.com/bibudem/api-communs/compare/v1.2.0...v1.3.0) (2023-02-21)
 
 
