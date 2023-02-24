@@ -31,6 +31,7 @@ export function apiDocRouter(apiBaseUrl, apiSchema) {
   }
 
   apiDocRouter.use('/schemas/openapi', (req, res) => res.json(apiSchema))
+  apiDocRouter.get('/schemas/errors', (req, res) => res.json(errorsSchema))
   apiDocRouter.use('/api-doc/', swaggerUi.serve)
   apiDocRouter.get('/api-doc/', swaggerUi.setup(null, swaggerUiOptions))
 
