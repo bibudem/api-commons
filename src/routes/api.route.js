@@ -1,13 +1,12 @@
 import { Router } from 'express'
 
 import { initialize } from 'express-openapi'
-import { getAboutController } from '../controllers/about.controller.js'
 import { apiDocRouter } from '../controllers/api-doc.controller.js'
 import { responseValidationMiddleware } from '../middlewares/response-validation.middleware.js'
 import { defaultMiddleware, errorMiddleware } from '../middlewares/error.middleware.js'
 import errorsSchema from '../errors.json' assert {type: 'json'}
 
-export async function initializeApi({ apiSchema, apiBaseUrl, operations, pkg, middlewares = [], externalSchemas = {} }) {
+export async function initializeApi({ apiSchema, apiBaseUrl, operations, middlewares = [], externalSchemas = {} }) {
 
   const router = new Router()
 
@@ -30,10 +29,7 @@ export async function initializeApi({ apiSchema, apiBaseUrl, operations, pkg, mi
       'https://raw.githubusercontent.com/bibudem/api-communs/main/src/errors.json': errorsSchema,
       ...externalSchemas
     },
-    operations: {
-      getAbout: getAboutController(pkg),
-      ...operations
-    }
+    operations
   })
 
   router.use(defaultMiddleware(apiBaseUrl))
