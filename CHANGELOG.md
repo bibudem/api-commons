@@ -2,6 +2,18 @@
 
 Toutes les modifications notables apportées à ce projet seront documentées dans ce fichier. Consultez [standard-version](https://github.com/conventional-changelog/standard-version) pour les lignes directrices des commits.
 
+## [1.5.0](https://github.com/bibudem/api-communs/compare/v1.4.0...v1.5.0) (2023-02-27)
+
+
+### Features
+
+* **route:** Retrait de la route /about. Il faudra l'ajouter à chaque API ([245a899](https://github.com/bibudem/api-communs/commit/245a89941a39c5a25922ff917d859b21fe154665))
+
+
+### Bug Fixes
+
+* Ajout d'un "/" à la fin de la route /api-doc/ ([5e45f37](https://github.com/bibudem/api-communs/commit/5e45f37a1f900ce714ca9a3083277dce71edc067))
+
 ## [1.4.0](https://github.com/bibudem/api-communs/compare/v1.3.0...v1.4.0) (2023-02-24)
 
 
